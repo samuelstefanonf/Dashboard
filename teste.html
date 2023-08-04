@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard de Organização Financeira Pessoal</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard de Organização Financeira Pessoal</h1>
+
+        <div class="input-container">
+            <label for="mes">Mês:</label>
+            <select id="mes" onchange="limparCampos()">
+                <option value="">Selecione o mês</option>
+                <option value="Janeiro">Janeiro</option>
+                <option value="Fevereiro">Fevereiro</option>
+                <option value="Março">Março</option>
+                <option value="Abril">Abril</option>
+                <option value="Maio">Maio</option>
+                <option value="Junho">Junho</option>
+                <option value="Julho">Julho</option>
+                <option value="Agosto">Agosto</option>
+                <option value="Setembro">Setembro</option>
+                <option value="Outubro">Outubro</option>
+                <option value="Novembro">Novembro</option>
+                <option value="Dezembro">Dezembro</option>
+            </select>
+            <br>
+            <label for="entradas">Entradas:</label>
+            <input type="number" id="entradas">
+            <br>
+            <label for="saidas">Saídas:</label>
+            <input type="number" id="saidas">
+            <br>
+            <div class="buttons-container">
+                <button onclick="atualizarGraficos()">Adicionar</button>
+                <button onclick="alterarDados()">Alterar</button>
+                <button onclick="limparDados()">Limpar</button>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="saldoChart"></canvas>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mês</th>
+                    <th>Entradas</th>
+                    <th>Saídas</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaDados">
+                <!-- Os dados da tabela serão preenchidos dinamicamente -->
+            </tbody>
+        </table>
+
+        <div class="total-container">
+            <label for="total">Total Geral:</label>
+            <input type="text" id="total" disabled>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
